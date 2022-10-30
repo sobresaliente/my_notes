@@ -5,28 +5,35 @@ import {
     Link, Routes
 } from "react-router-dom";
 import About from "../../pages/About/About";
+import styles from "./Header.module.css"
 
 const Header = () => {
     return (
         <Router>
             <header>
-                <nav>
-                    <ul>
+                <nav className={styles.header}>
+                    <ul className={styles.menu}>
                         <li>
-                            <Link to="/">Home</Link>
+                            <Link to="/" className={styles.link}>News</Link>
                         </li>
                         <li>
-                            <Link to="/about">About</Link>
+                            <Link to="/projects" className={styles.link}>Projects</Link>
                         </li>
                         <li>
-                            <Link to="/users">Users</Link>
+                            <Link to="/notes" className={styles.link}>Notes</Link>
+                        </li>
+                        <li>
+                            <Link to="/kanban" className={styles.link}>Kanban</Link>
+                        </li>
+                        <li>
+                            <Link to="/about" className={styles.link}>About</Link>
                         </li>
                     </ul>
                 </nav>
 
 
                 <Routes>
-                    <Route path="/about" element={<About />}>
+                    <Route path="/about" element={<About/>}>
                     </Route>
                 </Routes>
             </header>
