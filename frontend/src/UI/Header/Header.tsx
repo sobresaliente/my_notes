@@ -11,7 +11,7 @@ const Header = () => {
     return (
         <Router>
             <header>
-                <nav className={styles.header}>at
+                <nav className={styles.header}>
                     <ul className={styles.menu}>
                         <li>
                             <Link to="/" className={styles.link}>News</Link>
