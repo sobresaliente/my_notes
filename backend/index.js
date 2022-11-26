@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import newsRoutes from './routes/news.js';
+import { CONNECTION_URL } from "./config/database.config.js";
 
 const app = express();
 
@@ -12,8 +13,6 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }))
 
 app.use(cors());
 
-const CONNECTION_URL = "mongodb+srv://salienteNotes:fk7kwQdbR15fnBo4@cluster0.t2djgvm.mongodb.net/?retryWrites=true&w=majority"
-const CONNECTION_URL_DEPLOY = "mongodb+srv://salienteNotes:<password>@cluster0.t2djgvm.mongodb.net/?retryWrites=true&w=majority"
 const PORT = 5000;
 
 app.use('/news', newsRoutes);
