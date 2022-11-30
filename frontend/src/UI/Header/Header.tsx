@@ -5,6 +5,7 @@ import {
     Link, Routes
 } from "react-router-dom";
 import About from "../../pages/About/About";
+import News from '../../pages/News/News'
 import styles from "./Header.module.css"
 
 const Header = () => {
@@ -34,6 +35,8 @@ const Header = () => {
 
                 <Routes>
                     <Route path="/about" element={<About/>}>
+                    </Route>
+                    <Route path="/" element={<News/>}>
                     </Route>
                 </Routes>
             </header>
