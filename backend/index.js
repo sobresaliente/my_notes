@@ -3,7 +3,6 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import newsRoutes from './routes/news.js';
-import { CONNECTION_URL } from "./config/database.config.js";
 
 const app = express();
 

@@ -1,9 +1,15 @@
 import React from 'react';
+import NewsPost from "../../components/NewsPost/NewsPost";
 
 const News = () => {
     return (
         <div>
-            News
+            <NewsPost />
+            <NewsPost />
+            <NewsPost />
+            <NewsPost />
+            <NewsPost />
+
         </div>
     );
 };
