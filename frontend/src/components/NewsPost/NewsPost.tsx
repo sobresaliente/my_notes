@@ -12,6 +12,7 @@ const NewsPost = ({newsPost} : any) => {
             <div>
                 {newsPost.tags}
             </div>
+            <span>{newsPost.createdAt.slice(0, 10)}</span>
             <button>Delete news</button>
         </div>
     );

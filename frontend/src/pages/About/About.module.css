@@ -1,0 +1,14 @@
+.main {
+    display: flex;
+    justify-content: space-around;
+}
+
+.image {
+    width: 600px;
+    height: 800px;
+}
+
+.title {
+    margin-top: 20px;
+    margin-left: 20px;
+}
