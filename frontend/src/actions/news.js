@@ -1,6 +1,6 @@
 import * as api from '../api';
 
-export const getNews = () => async (dispatch: any) => {
+export const getNews = () => async (dispatch) => {
     try {
         const { data } = await api.fetchNews();
 
@@ -9,4 +9,14 @@ export const getNews = () => async (dispatch: any) => {
         console.log(error.message);
     }
 
+}
+
+export const createNews = (newsPost) => async (dispatch) => {
+    try {
+        const { data } = await api.createNews(newsPost);
+
+        dispatch({type: "CREATE_NEWS", payload: data});
+    } catch (error) {
+        console.log(error.message)
+    }
 }

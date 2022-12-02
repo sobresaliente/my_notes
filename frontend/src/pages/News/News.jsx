@@ -4,15 +4,12 @@ import { useSelector } from "react-redux";
 import Form from "../../components/Form/Form";
 
 const News = () => {
-    const news = useSelector((state: any) => state.news );
+    const news = useSelector((state) => state.news );
+
     return (
         <div>
             <Form />
-            <NewsPost />
-            <NewsPost />
-            <NewsPost />
-            <NewsPost />
-            <NewsPost />
+            {news.map((newsPost) => <NewsPost key={newsPost._id} newsPost={ newsPost }/>)}
 
         </div>
     );

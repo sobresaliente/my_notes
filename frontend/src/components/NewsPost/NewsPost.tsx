@@ -1,9 +1,18 @@
 import React from 'react';
 
-const NewsPost = () => {
+const NewsPost = ({newsPost} : any) => {
     return (
         <div>
-            News Post
+            <h2>
+                {newsPost.title}
+            </h2>
+            <div>
+                {newsPost.text}
+            </div>
+            <div>
+                {newsPost.tags}
+            </div>
+            <button>Delete news</button>
         </div>
     );
 };

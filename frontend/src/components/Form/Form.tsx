@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
+import { useDispatch } from "react-redux";
+import { createNews } from "../../actions/news";
 
 const Form = () => {
-    const handleSubmit = () => {
+    const handleSubmit = (e: any) => {
+        e.preventDefault();
+        console.log('aaa')
+        // @ts-ignore
+        dispatch(createNews(newsData))
     }
     const [newsData, setNewsData] = useState({
         title: "",
@@ -9,6 +15,9 @@ const Form = () => {
         tags: ""
     })
 
+    const dispatch = useDispatch();
+
+    console.log(newsData)
     return (
         <div>
             <form autoComplete="off" noValidate onSubmit={handleSubmit}>
