@@ -8,6 +8,7 @@ function App() {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        // @ts-ignore
         dispatch(getNews())
     }, [dispatch])
     return (
