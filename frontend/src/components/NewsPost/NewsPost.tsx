@@ -1,6 +1,7 @@
 import React from 'react';
 
-const NewsPost = ({newsPost} : any) => {
+const NewsPost = ({newsPost, setNewsId} : any) => {
+
     return (
         <div>
             <h2>
@@ -14,6 +15,7 @@ const NewsPost = ({newsPost} : any) => {
             </div>
             <span>{newsPost.createdAt.slice(0, 10)}</span>
             <button>Delete news</button>
+            <button onClick={() => setNewsId(newsPost._id)}>Edit news</button>
         </div>
     );
 };

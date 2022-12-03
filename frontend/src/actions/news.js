@@ -17,6 +17,16 @@ export const createNews = (newsPost) => async (dispatch) => {
 
         dispatch({type: "CREATE_NEWS", payload: data});
     } catch (error) {
-        console.log(error.message)
+        console.log(error.message);
+    }
+}
+
+export const updateNews = (id, updatedNewsPost) => async (dispatch) => {
+    try {
+        const { data } = await api.updateNews(id, updatedNewsPost);
+
+        dispatch({type: "UPDATE_NEWS", payload: data});
+    } catch (error) {
+        console.log(error.message);
     }
 }

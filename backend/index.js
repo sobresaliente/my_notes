@@ -9,13 +9,12 @@ const app = express();
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }))
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }))
-
 app.use(cors());
+app.use('/news', newsRoutes);
 
-const PORT = 27017;
+const PORT = 5000;
 const db = "mongodb://localhost/";
 
-app.use('/news', newsRoutes);
 
 try {
     // Connect to the MongoDB cluster
