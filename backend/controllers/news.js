@@ -1,5 +1,5 @@
 import NewsPost from '../news/newsModels.js'
-import mongoose, {Mongoose} from "mongoose";
+import mongoose from "mongoose";
 
 export const getNews = async (req, res) => {
     try {

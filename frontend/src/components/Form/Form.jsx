@@ -22,8 +22,18 @@ const Form = ({newsId, setNewsId}) => {
         if (newsId) {
             dispatch(updateNews(newsId, newsData));
         } else {
-            dispatch(createNews(newsData))
+            dispatch(createNews(newsData));
         }
+        clear();
+    }
+
+    const clear = () => {
+        setNewsId(null);
+        setNewsData({
+            title: "",
+            text: "",
+            tags: ""
+        })
     }
 
 
@@ -43,7 +53,7 @@ const Form = ({newsId, setNewsId}) => {
                     Tags:
                     <input type="text" name="tags"  value={newsData.tags || ""} onChange={(e) => setNewsData({...newsData, tags: e.target.value})}/>
                 </label>
-                <input type="submit"/>
+                <button type="submit">{newsId ? "Update" : "Add"}</button>
             </form>
         </div>
     );

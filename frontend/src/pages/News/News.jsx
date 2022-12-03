@@ -1,12 +1,21 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import NewsPost from "../../components/NewsPost/NewsPost";
-import { useSelector } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import Form from "../../components/Form/Form";
+import {getNews} from "../../actions/news";
 
 const News = () => {
     const news = useSelector((state) => state.news );
 
     const [newsId, setNewsId] = useState(null);
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        // @ts-ignore
+        dispatch(getNews())
+    }, [newsId, dispatch])
+
     return (
         <div>
             <Form newsId={newsId} setNewsId={setNewsId} />
