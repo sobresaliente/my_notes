@@ -30,3 +30,12 @@ export const updateNews = (id, updatedNewsPost) => async (dispatch) => {
         console.log(error.message);
     }
 }
+
+export const deleteNews = (id) => async (dispatch) => {
+    try {
+        await api.deleteNews(id);
+        dispatch({type: "DELETE_NEWS", payload: id});
+    } catch (error) {
+        console.log(error);
+    }
+}

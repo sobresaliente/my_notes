@@ -7,3 +7,5 @@ export const fetchNews = () => axios.get(url)
 export const createNews = (newNewsPost) => axios.post(url, newNewsPost)
 
 export const updateNews = (id, updatedNewsPost) => axios.patch(`${url}/${id}`, updatedNewsPost);
+
+export const deleteNews = (id) => axios.delete(`${url}/${id}`);

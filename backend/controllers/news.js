@@ -30,6 +30,16 @@ export const updateNews = async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(_id)) {
         return res.status(404).send("Not found");
     }
-    const updatedNewsPost = await NewsPost.findByIdAndUpdate(_id, newNewsPost, {new: true})
+    const updatedNewsPost = await NewsPost.findByIdAndUpdate(_id, {...newNewsPost, _id}, {new: true})
     res.json(updatedNewsPost);
+}
+
+export const deleteNews = async (req, res) => {
+    const {id: _id} = req.params;
+    if (!mongoose.Types.ObjectId.isValid(_id)) {
+        return res.status(404).send("Not found");
+    }
+
+    await NewsPost.findByIdAndRemove(_id);
+    res.json({message: "News post deleted"});
 }

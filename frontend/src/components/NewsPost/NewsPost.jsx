@@ -1,7 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import { useDispatch } from "react-redux";
+import {deleteNews, getNews} from "../../actions/news";
 
-const NewsPost = ({newsPost, setNewsId} : any) => {
+const NewsPost = ({newsPost, setNewsId}) => {
+    const dispatch = useDispatch();
 
+    const onDelete = () => {
+        dispatch(deleteNews(newsPost._id));
+    }
     return (
         <div>
             <h2>
@@ -14,7 +20,7 @@ const NewsPost = ({newsPost, setNewsId} : any) => {
                 {newsPost.tags}
             </div>
             <span>{newsPost.createdAt.slice(0, 10)}</span>
-            <button>Delete news</button>
+            <button onClick={onDelete}>Delete news</button>
             <button onClick={() => setNewsId(newsPost._id)}>Edit news</button>
         </div>
     );
