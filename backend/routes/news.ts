@@ -1,7 +1,7 @@
 import express from 'express';
 import {getNews, createNews, updateNews, deleteNews} from '../controllers/news.js'
 
-const router = express.Router();
+const router: any = express.Router();
 
 router.get('/', getNews);
 router.post('/', createNews);

@@ -2,12 +2,12 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import newsRoutes from './routes/news.js';
+import newsRoutes from './routes/news';
 
 const app = express();
 
 
-app.use(bodyParser.json({ limit: "30mb", extended: true }))
+app.use(bodyParser.json({ limit: "30mb" }))
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }))
 app.use(cors());
 app.use('/news', newsRoutes);
@@ -20,7 +20,7 @@ try {
     // Connect to the MongoDB cluster
     mongoose.connect(
         db,
-        { useNewUrlParser: true, useUnifiedTopology: true },
+
         () => app.listen(PORT, () => console.log('Server started')),
     );
 } catch (e) {

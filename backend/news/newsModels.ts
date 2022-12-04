@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const newsSchema = mongoose.Schema({
+const newsSchema = new mongoose.Schema({
     title: String,
     text: String,
     tags: [String],

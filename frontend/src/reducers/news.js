@@ -1,6 +1,5 @@
 
 export default (news = [], action) => {
-    console.log(news);
     switch (action.type) {
         case 'FETCH_ALL':
             return action.payload;
