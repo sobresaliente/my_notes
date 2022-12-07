@@ -1,4 +1,4 @@
-import NewsPost from '../news/newsModels'
+import NewsPost from '../news/newsModels.js'
 import mongoose from "mongoose";
 
 export const getNews = async (req: any, res: any) => {
